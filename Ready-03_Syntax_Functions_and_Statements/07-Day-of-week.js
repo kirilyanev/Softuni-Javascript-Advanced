@@ -1,5 +1,5 @@
 function solve(day) {
-    let result = 0
+    let result = 0;
 
     switch (day) {
         case 'Monday': result = 1; break;
@@ -12,7 +12,7 @@ function solve(day) {
         default: result = 'error'; break;
     }
     
-    console.log(result)
+    console.log(result);
 }
 
 solve('Monday');
