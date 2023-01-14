@@ -9,9 +9,7 @@ function positiveNegative(arr) {
         }
     });
 
-    result.forEach(element => {
-        console.log(element);
-    });
+    console.log(result.join('\n'))
 }
 
 positiveNegative([7, -2, 8, 9]);
