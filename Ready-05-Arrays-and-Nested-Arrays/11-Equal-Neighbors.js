@@ -3,16 +3,14 @@ function findMatches(arr) {
     const columns = arr[0].length;
     let matches = 0;
 
-    for (let row = 0; row < rows; row++) {
-        
+    for (let row = 0; row < rows; row++) {      
         for (let col = 0; col < columns - 1; col++) {
             let currEl = arr[row][col];
             let nextEl = arr[row][col+1];
 
             if (currEl === nextEl) {
                 matches += 1;
-        }
-            
+            }   
         }
     }
 
