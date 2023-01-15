@@ -5,6 +5,7 @@ function extractSequence(arr) {
 
     for (let i = 0; i < arrLength; i++) {
         let currNum = arr[i];
+        
         if (currNum >= biggestNum) {
             result.push(currNum);
             biggestNum = currNum;
