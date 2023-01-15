@@ -4,7 +4,6 @@ function sortNames(namesArr) {
 
     for (let i = 0; i < resultLength; i++) {
         console.log(`${i+1}.${result[i]}`);
-        
     }
 }
 
