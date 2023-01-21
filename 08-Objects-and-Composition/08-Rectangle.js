@@ -1,5 +1,6 @@
 function rectangle(width,height,color) {
     let finalColor = color[0].toUpperCase()+color.slice(1);
+
     const rect = {
         width,
         height,
@@ -9,6 +10,7 @@ function rectangle(width,height,color) {
             return result;
         }
     }
+    
     return rect;
 }
 
