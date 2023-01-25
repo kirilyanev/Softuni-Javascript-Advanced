@@ -4,9 +4,6 @@ function search() {
    let resultElement = document.getElementById('result');
    let matchesCount = 0;
 
-   console.log(townsElements);
-   // let towns = townsElement.textContent.trim().split('   ');
-
    for (const town of townsElements) {
       if(town.textContent.includes(searchText)) {
          matchesCount++;
