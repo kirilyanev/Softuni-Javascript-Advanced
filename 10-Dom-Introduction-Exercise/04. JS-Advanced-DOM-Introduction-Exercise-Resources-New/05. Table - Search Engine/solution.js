@@ -6,12 +6,7 @@ function solve() {
       let searchedWord = document.getElementById('searchField').value;
 
       for (let row of rowsElements) {
-         if(row.className === 'select') {
-            row.classList.remove('select');
-         }
-      }
-
-      for (let row of rowsElements) {
+         row.classList.remove('select');
          if (row.textContent.includes(searchedWord)) {
             row.className = 'select';
          }
