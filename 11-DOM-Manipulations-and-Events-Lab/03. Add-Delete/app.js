@@ -11,14 +11,9 @@ function addItem() {
 
     deleteElement.textContent = '[Delete]';
     deleteElement.href = "#"
-    //deleteElement.onclick = deleteElement;
 
     liElement.appendChild(deleteElement);
     itemsElement.appendChild(liElement);
-    
-    // function deleteElement(e) {
-    //     let elementToDelete = e.target.parentNode.remove();
-    // }
 
     deleteElement.addEventListener('click', (e)=> {
         e.currentTarget.parentNode.remove();
