@@ -1,3 +1,5 @@
+// Neat solution
+
 function attachEventsListeners() {
     let days = document.getElementById('days');
     let hours = document.getElementById('hours');
@@ -38,7 +40,7 @@ function attachEventsListeners() {
     }
 }
 
-// First solution - 33/100 in judge
+// First solution 
 
 // function attachEventsListeners() {
 //     let buttonElements = Array.from(document.querySelectorAll('input[type=button]'));
@@ -67,21 +69,21 @@ function attachEventsListeners() {
 //         }
 //         else if (timeType === 'hours') {
 //             hours = Number(time);
-//             days = Math.floor(hours / 24);
+//             days = hours / 24;
 //             minutes = hours * 60;
 //             seconds = minutes * 60;
 //         }
 //         else if (timeType === 'minutes') {
 //             minutes = Number(time);
 //             seconds = minutes * 60;
-//             hours = Math.floor(minutes / 60);
-//             days = Math.floor(hours / 24);
+//             hours = minutes / 60;
+//             days = hours / 24;
 //         }
 //         else if (timeType === 'seconds') {
 //             seconds = Number(time);
-//             minutes = Math.floor(seconds / 60);
-//             hours = Math.floor(minutes / 60);
-//             days = Math.floor(hours / 24);
+//             minutes = seconds / 60;
+//             hours = minutes / 60;
+//             days = hours / 24;
 //         }
 
 //         inputElements[0].value = days;
