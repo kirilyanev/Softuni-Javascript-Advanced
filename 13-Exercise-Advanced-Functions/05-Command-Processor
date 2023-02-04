@@ -1,0 +1,39 @@
+function solution() {
+    return {
+        string: '',
+
+        append(string){
+            this.string = this.string + string
+            return this.string;
+        },
+        removeStart(n){
+            this.string = this.string.slice(n)
+            return this.string;
+        },
+        removeEnd(n) {
+            this.string = this.string.slice(0,this.string.length - n);
+            return this.string;
+        },
+        print(){
+            return console.log(this.string);
+        }
+    }
+}
+
+
+let firstZeroTest = solution();
+
+firstZeroTest.append('hello');
+firstZeroTest.append('again');
+firstZeroTest.removeStart(3);
+firstZeroTest.removeEnd(4);
+firstZeroTest.print();
+
+
+let secondZeroTest = solution();
+
+secondZeroTest.append('123');
+secondZeroTest.append('45');
+secondZeroTest.removeStart(2);
+secondZeroTest.removeEnd(1);
+secondZeroTest.print();
