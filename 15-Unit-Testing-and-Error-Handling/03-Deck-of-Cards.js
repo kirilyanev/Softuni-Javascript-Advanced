@@ -1,31 +1,30 @@
 function printDeckOfCards(cards) {
-    function createCard (face,suit){
-       // Use the solution from the previous task 
+    function createCard(face, suit) {
         const faces = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
         const suits = {
-        S: '\u2660',
-        H: '\u2665',
-        D: '\u2666',
-        C: '\u2663',
-    }
-
-    if (faces.includes(face) == false || suit in suits == false) {
-        return `Invalid card: ${face + suit}`;
-    }
-
-    let card = {
-        face,
-        suit,
-        toString() {
-            return this.face + suits[this.suit];
+            S: '\u2660',
+            H: '\u2665',
+            D: '\u2666',
+            C: '\u2663',
         }
+
+        if (faces.includes(face) == false || suit in suits == false) {
+            return `Invalid card: ${face + suit}`;
+        }
+
+        let card = {
+            face,
+            suit,
+            toString() {
+                return this.face + suits[this.suit];
+            }
+        }
+
+        return card;
     }
 
-    return card;
-    }
-    // TODO
     let result = [];
-    
+
     for (let faceSuit of cards) {
         faceSuit = faceSuit.split('');
         let face = faceSuit[0];
@@ -34,7 +33,7 @@ function printDeckOfCards(cards) {
             face = faceSuit[0] + faceSuit[1];
             suit = faceSuit[2];
         }
-        let card = createCard(face,suit);
+        let card = createCard(face, suit);
         if (card.length > 3) {
             return console.log(card);
         }
