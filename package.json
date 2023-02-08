@@ -1,0 +1,23 @@
+{
+  "name": "softuni-javascript-advanced",
+  "version": "1.0.0",
+  "description": "Solutions from Softuni - Javascript Advanced course",
+  "main": "15-04-sumNumbers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kirilyanev/Softuni-Javascript-Advanced.git"
+  },
+  "author": "KY",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kirilyanev/Softuni-Javascript-Advanced/issues"
+  },
+  "homepage": "https://github.com/kirilyanev/Softuni-Javascript-Advanced#readme",
+  "dependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0"
+  }
+}
