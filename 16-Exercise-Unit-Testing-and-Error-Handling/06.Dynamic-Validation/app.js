@@ -1,15 +1,15 @@
 function validate() {
     let inputElement = document.querySelector('#email');
     let emailRegexCheck = /[a-z]+@[a-z]+\.[a-z]+/gm;
+    
+    inputElement.addEventListener('change',checkMail);
 
-    inputElement.onchange = () => {
-        let input = inputElement.value;
-        let validEmail = input.match(emailRegexCheck);
-
-        if (validEmail == null) {
-            inputElement.classList = 'error';
-        } else {
-            inputElement.classList = '';
+    function checkMail(e){
+        if(emailRegexCheck.test(e.target.value)){
+            e.target.removeAttribute('class');
+            return;
         }
+
+        e.target.className = 'error';
     }
 }
