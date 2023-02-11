@@ -5,16 +5,21 @@ function validateHttrequest(request) {
     const validMethods = ['GET', 'POST', 'DELETE', 'CONNECT'];
     const validVersions = ['HTTP/0.9', 'HTTP/1.0', 'HTTP/1.1', 'HTTP/2.0'];
 
-    const errorMessage = (param) => { throw new Error(`Invalid request header: Invalid ${param}`) };
+    if (!method || !validMethods.includes(method)) {
+        throw new Error(`Invalid request header: Invalid Method`);
+    };
 
-    if (!validMethods.includes(method) || !method) errorMessage('Method');
+    if (!uri || !uri.match(uriRegex) || uri == '') {
+        throw new Error(`Invalid request header: Invalid URI`);
+    };
 
-    if (!uri.match(uriRegex) || !uri) errorMessage('Uri');
+    if (!validVersions.includes(version)) {
+        throw new Error(`Invalid request header: Invalid Version`);
+    };
 
-    if (!validVersions.includes(version)) errorMessage('Version');
-    // console.log(!message.match(messageRegex));
-    if ((message && !message.match(messageRegex)) || !message && message !== '') errorMessage('Message');
-
+    if (message == undefined || (message && !message.match(messageRegex))) {
+        throw new Error(`Invalid request header: Invalid Message`);
+    };
     return request;
 }
 
@@ -24,12 +29,19 @@ console.log(validateHttrequest({
     version: 'HTTP/1.1',
     message: ''
 }));
+console.log(validateHttrequest({
+    method: 'POST',
+    version: 'HTTP/2.0',
+    message: 'rm -rf /*'
+}));
+
 //   console.log(validateHttrequest({
 //     method: 'OPTIONS',
 //     uri: 'git.master',
 //     version: 'HTTP/1.1',
 //     message: '-recursive'
 //   }));
+
 //   console.log(validateHttrequest({
 //     method: 'POST',
 //     uri: 'home.bash',
