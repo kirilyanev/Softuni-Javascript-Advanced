@@ -16,33 +16,38 @@ class Company {
             salary: salary,
             position: position
         }
-        if(!this.departments[department]) {
+
+        if (!this.departments[department]) {
             this.departments[department] = [];
         };
-        this.departments[department].push(worker);
 
+        this.departments[department].push(worker);
 
         return `New employee is hired. Name: ${name}. Position: ${position}`
     };
 
     bestDepartment() {
         const allDepartments = [];
-        for(let department in this.departments) {
+
+        for (let department in this.departments) {
             let averageSalary = 0;
+
             for (let worker of this.departments[department]) {
                 averageSalary += worker.salary;
             }
+
             averageSalary = averageSalary / this.departments[department].length;
             allDepartments.push({
-                department:department,
-                salary:averageSalary,
+                department: department,
+                salary: averageSalary,
             })
-
         }
-        const sortedDepartments = allDepartments.sort((a,b)=> b.salary - a.salary);
-        const result = [`Best Department is: ${sortedDepartments[0].department}`,`Average salary: ${sortedDepartments[0].salary.toFixed(2)}`];
+
+        const sortedDepartments = allDepartments.sort((a, b) => b.salary - a.salary);
         const workers = this.departments[sortedDepartments[0].department];
-        const sortedWorkers = workers.sort((a,b)=> a.salary == b.salary ? a.name.localeCompare(b.name) : b.salary - a.salary);
+        const sortedWorkers = workers.sort((a, b) => a.salary == b.salary ? a.name.localeCompare(b.name) : b.salary - a.salary);
+        const result = [`Best Department is: ${sortedDepartments[0].department}`, `Average salary: ${sortedDepartments[0].salary.toFixed(2)}`];
+        
         sortedWorkers.forEach(w => {
             const workerData = `${w.name} ${w.salary} ${w.position}`;
             result.push(workerData);
