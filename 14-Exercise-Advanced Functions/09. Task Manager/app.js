@@ -5,26 +5,18 @@ function solve() {
     const addBtn = document.querySelector('#add');
     const sections = Array.from(document.querySelectorAll('section'));
 
-
-    // //=========
-    // taskElement.value = 'JS Advanced Exam';
-    // descriptionElement.value = 'Preparation';
-    // dateElement.value = '14/02/2023';
-    // //=========
-
-
     addBtn.addEventListener('click', (e) => {
         e.preventDefault();
         if(!taskElement.value || !descriptionElement.value || !dateElement.value) {
             return;
         }
-        const article = createElement('article');
-        const h3 = createElement('h3', taskElement.value);
-        const paragraphOne = createElement('p', `Description: ${descriptionElement.value}`);
-        const paragraphTwo = createElement('p', `Due Date: ${dateElement.value}`);
-        const div = createElement('div', null, 'flex');
-        const startBtn = createElement('button', 'Start', 'green');
-        const deleteBtn = createElement('button', 'Delete', 'red');
+        const article = createDomElement('article');
+        const h3 = createDomElement('h3', taskElement.value);
+        const pDesc = createDomElement('p', `Description: ${descriptionElement.value}`);
+        const pDate = createDomElement('p', `Due Date: ${dateElement.value}`);
+        const div = createDomElement('div', null, 'flex');
+        const startBtn = createDomElement('button', 'Start', 'green');
+        const deleteBtn = createDomElement('button', 'Delete', 'red');
 
         startBtn.addEventListener('click', startTask);
         deleteBtn.addEventListener('click', deleteTask)
@@ -32,8 +24,8 @@ function solve() {
         div.appendChild(startBtn);
         div.appendChild(deleteBtn);
         article.appendChild(h3);
-        article.appendChild(paragraphOne);
-        article.appendChild(paragraphTwo);
+        article.appendChild(pDesc);
+        article.appendChild(pDate);
         article.appendChild(div);
 
         sections[1].querySelector('div:nth-child(2)').appendChild(article);
@@ -58,14 +50,12 @@ function solve() {
 
     function finishTask(e) {
         const completedTask = e.target.parentElement.parentElement;
-        // Array.from(completedTask.querySelectorAll('button'))[0].remove();
-        // Array.from(completedTask.querySelectorAll('button'))[0].remove();
         completedTask.querySelector('div').remove();
 
         sections[3].querySelector('div:nth-child(2)').appendChild(completedTask);
     }
 
-    function createElement(type, text, classAttribute) {
+    function createDomElement(type, text, classAttribute) {
         const element = document.createElement(type);
         if (text) {
             element.textContent = text;
