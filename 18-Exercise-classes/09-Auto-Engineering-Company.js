@@ -1,30 +1,55 @@
-function carRegister(carsArr) {
-    const carRegister = {};
-    const modelRegister = {};
+// function carRegister(carsArr) {
+//     const carRegister = {};
+//     const modelRegister = {};
 
-    for (let carData of carsArr) {
+//     for (let carData of carsArr) {
+//         const [car, model, quantity] = carData.split(' | ');
+
+//         if (!carRegister[car]) {
+//             carRegister[car] = [];
+//         }
+
+//         if (!carRegister[car].includes(model)) {
+//             carRegister[car].push(model);
+//         }
+
+//         if (!modelRegister[model]) {
+//             modelRegister[model] = 0
+//         }
+
+//         modelRegister[model] += Number(quantity);
+//     }
+
+//     for (let car in carRegister) {
+//         console.log(car);
+//         carRegister[car].forEach(c => {
+//             console.log(`###${c} -> ${modelRegister[c]}`);
+//         });
+//     }
+// }
+
+function carRegister(carsArr) {
+    const register = {};
+
+    for(let carData of carsArr) {
         const [car, model, quantity] = carData.split(' | ');
 
-        if (!carRegister[car]) {
-            carRegister[car] = [];
+        if(!register[car]) {
+            register[car] = {};
+        }
+    
+        if(!register[car][model]) {
+            register[car][model] = 0;
         }
 
-        if (!carRegister[car].includes(model)) {
-            carRegister[car].push(model);
-        }
-
-        if (!modelRegister[model]) {
-            modelRegister[model] = 0
-        }
-
-        modelRegister[model] += Number(quantity);
+        register[car][model] += Number(quantity);
     }
 
-    for (let car in carRegister) {
+    for(let car in register) {
         console.log(car);
-        carRegister[car].forEach(c => {
-            console.log(`###${c} -> ${modelRegister[c]}`);
-        });
+        for (let model in register[car]) {
+            console.log(`###${model} -> ${register[car][model]}`);
+        }
     }
 }
 
