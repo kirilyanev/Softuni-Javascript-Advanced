@@ -48,19 +48,19 @@ describe("Tests flowerShop", function () {
         });
 
         it("invalid first parameter", function () {
-            expect(() => { flowerShop.sellFlowers("Rose,Lily,Orchid", 1) }).throw("Invalid input!");
+            expect(() => { flowerShop.sellFlowers("Rose,Lily,Orchid", 1) }).to.throw("Invalid input!");
         });
 
         it("invalid second parameter - string", function () {
-            expect(() => { flowerShop.sellFlowers(["Rose", "Lily", "Orchid"], '1') }).throw("Invalid input!");
+            expect(() => { flowerShop.sellFlowers(["Rose", "Lily", "Orchid"], '1') }).to.throw("Invalid input!");
         });
 
         it("second parameter is negative number - out of range", function () {
-            expect(() => { flowerShop.sellFlowers(["Rose", "Lily", "Orchid"], -1) }).throw("Invalid input!");
+            expect(() => { flowerShop.sellFlowers(["Rose", "Lily", "Orchid"], -1) }).to.throw("Invalid input!");
         });
 
         it("second parameter is bigger than gardenArr.length number - out of range", function () {
-            expect(() => { flowerShop.sellFlowers(["Rose", "Lily", "Orchid"], 5) }).throw("Invalid input!");
+            expect(() => { flowerShop.sellFlowers(["Rose", "Lily", "Orchid"], 5) }).to.throw("Invalid input!");
         });
 
     });
