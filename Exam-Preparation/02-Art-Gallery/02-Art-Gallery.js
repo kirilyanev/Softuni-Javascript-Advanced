@@ -104,17 +104,17 @@ class ArtGallery {
 
     };
 
-    showGalleryInfo (criteria){
+    showGalleryInfo(criteria) {
         const output = [];
-        if(criteria == 'article') {
+        if (criteria == 'article') {
             output.push('Articles information:');
-            this.listOfArticles.forEach(ar=>output.push(`${ar.articleModel} - ${ar.articleName} - ${ar.quantity}`));
+            this.listOfArticles.forEach(ar => output.push(`${ar.articleModel} - ${ar.articleName} - ${ar.quantity}`));
             return output.join('\n');
         }
 
-        if(criteria == 'guest') {
+        if (criteria == 'guest') {
             output.push('Guests information:');
-            this.guests.forEach(g=>output.push(`${g.guestName} - ${g.purchaseArticle}`));
+            this.guests.forEach(g => output.push(`${g.guestName} - ${g.purchaseArticle}`));
             return output.join('\n');
         }
     }
@@ -140,7 +140,7 @@ class ArtGallery {
 // console.log(artGallery.buyArticle('item', 'Ancient vase', 'Peter'));
 // console.log(artGallery.buyArticle('item', 'Mona Liza', 'John'));
 
-const artGallery = new ArtGallery('Curtis Mayfield'); 
+const artGallery = new ArtGallery('Curtis Mayfield');
 artGallery.addArticle('picture', 'Mona Liza', 3);
 artGallery.addArticle('Item', 'Ancient vase', 2);
 artGallery.addArticle('picture', 'Mona Liza', 1);
