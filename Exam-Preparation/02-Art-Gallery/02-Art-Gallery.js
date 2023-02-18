@@ -100,8 +100,6 @@ class ArtGallery {
         if (isPresent == false) {
             return "This guest is not invited.";
         };
-
-
     };
 
     showGalleryInfo(criteria) {
