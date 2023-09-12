@@ -48,12 +48,12 @@ A simple mini-game where the player needs to enter a secret combination to unloc
    
 ## Usage
 
-1. Open the index.html file in your web browser:
+1. Open your web browser and navigate to:
 
    ```bash
-   open index.html
+   http://localhost:3000/
    
-This will launch the vault safe mini-game.
+This will launch the vault safe mini-game in a local server.
 
 2. To interact with the handle of the safe, [click left/right side of the screen to rotate the handle].
 
